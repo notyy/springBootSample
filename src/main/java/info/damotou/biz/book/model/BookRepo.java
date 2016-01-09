@@ -31,6 +31,9 @@ public class BookRepo {
     }
 
     public Book findByName(String name) {
+        if(name == null || name.isEmpty()){
+            throw new IllegalArgumentException("book name can't be empty");
+        }
         return books.get(name);
     }
 }
